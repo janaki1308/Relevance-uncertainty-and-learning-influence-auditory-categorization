@@ -1,0 +1,22 @@
+# Ignore followoing folders
+
+auditory_categorization_online_data
+auditory_categorization
+human_auditory_categorization
+figures
+'irb and online consent'
+papers
+'PsychoPy3 Demos'
+__pycache__
+dummy_task/assets
+dummy_task/data
+dummy_task/html
+dummy_task/soundfiles*
+
+
+# Ignore all text,csv and xlsx files
+
+.docx
+.csv
+.xlsx
+.pdf

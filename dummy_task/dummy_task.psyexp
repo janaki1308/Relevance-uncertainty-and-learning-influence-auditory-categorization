@@ -1,0 +1,603 @@
+﻿<?xml version="1.0" ?>
+<PsychoPy2experiment encoding="utf-8" version="2020.2.4">
+  <Settings>
+    <Param name="Audio latency priority" updates="None" val="4" valType="str"/>
+    <Param name="Audio lib" updates="None" val="sounddevice" valType="str"/>
+    <Param name="Completed URL" updates="None" val="" valType="str"/>
+    <Param name="Data file delimiter" updates="None" val="auto" valType="str"/>
+    <Param name="Data filename" updates="None" val="u'data/%s_%s_%s' % (expInfo['participant'], expName, expInfo['date'])" valType="code"/>
+    <Param name="Enable Escape" updates="None" val="True" valType="bool"/>
+    <Param name="Experiment info" updates="None" val="{'participant': '', 'session': '001'}" valType="code"/>
+    <Param name="Force stereo" updates="None" val="True" valType="bool"/>
+    <Param name="Full-screen window" updates="None" val="False" valType="bool"/>
+    <Param name="HTML path" updates="None" val="html" valType="str"/>
+    <Param name="Incomplete URL" updates="None" val="" valType="str"/>
+    <Param name="Monitor" updates="None" val="testMonitor" valType="str"/>
+    <Param name="Resources" updates="None" val="[]" valType="fileList"/>
+    <Param name="Save csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Save excel file" updates="None" val="True" valType="bool"/>
+    <Param name="Save log file" updates="None" val="True" valType="bool"/>
+    <Param name="Save psydat file" updates="None" val="True" valType="bool"/>
+    <Param name="Save wide csv file" updates="None" val="True" valType="bool"/>
+    <Param name="Screen" updates="None" val="1" valType="num"/>
+    <Param name="Show info dlg" updates="None" val="True" valType="bool"/>
+    <Param name="Show mouse" updates="None" val="False" valType="bool"/>
+    <Param name="Units" updates="None" val="height" valType="str"/>
+    <Param name="Use version" updates="None" val="" valType="str"/>
+    <Param name="Window size (pixels)" updates="None" val="[1280, 800]" valType="code"/>
+    <Param name="blendMode" updates="None" val="avg" valType="str"/>
+    <Param name="color" updates="None" val="$[-1,-1,-1]" valType="str"/>
+    <Param name="colorSpace" updates="None" val="rgb" valType="str"/>
+    <Param name="expName" updates="None" val="dummy_task" valType="str"/>
+    <Param name="exportHTML" updates="None" val="on Sync" valType="str"/>
+    <Param name="logging level" updates="None" val="debug" valType="code"/>
+  </Settings>
+  <Routines>
+    <Routine name="intruction">
+      <TextComponent name="Instructions">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.025" valType="code"/>
+        <Param name="name" updates="None" val="Instructions" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Training: Please choose high (press key ‘h’) or low (press key ‘l’) based on what underlying distribution you believe the tone cloud (sequence of 3 tones) is from. &amp;#10;&amp;#10;Also note that in the tone cloud any number of tones (0-3) could be from a background distribution. A background tone in most cases will sound different than one from the high/low distribution.&amp;#10;&amp;#10;When you encounter background tone(s) use your best judgement to decide if that entire set is from the low / high distribution. ‘h’ and ‘l’ are the only two options. &amp;#10;&amp;#10;Press any key to start." valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="key_resp">
+        <Param name="allowedKeys" updates="constant" val="" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="key_resp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="trial_train">
+      <SoundComponent name="tone_cloud">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="hamming" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="tone_cloud" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="sound" updates="set every repeat" val="$&quot;soundfiles_three_tones_train_v2/&quot;+ Name" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.1" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+        <Param name="volume" updates="constant" val="0.3" valType="code"/>
+      </SoundComponent>
+      <KeyboardComponent name="resp">
+        <Param name="allowedKeys" updates="constant" val="['h','l']" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="resp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.6" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="reminder_instruction">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="reminder_instruction" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, -1)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="0.3" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="keys - ‘h’ : high dist     ’l’ : low dist" valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="trial_test">
+      <SoundComponent name="test_tone_cloud">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="hamming" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="test_tone_cloud" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="sound" updates="set every repeat" val="$&quot;soundfiles_three_tones_test_v2/&quot;+ Name" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.1" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+        <Param name="volume" updates="set every repeat" val="0.3" valType="code"/>
+      </SoundComponent>
+      <KeyboardComponent name="test_resp">
+        <Param name="allowedKeys" updates="constant" val="['h','l']" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="test_resp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.6" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="test_reminder_instruction">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="test_reminder_instruction" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, -10)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="0.3" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every frame" val="‘h’: high dist,     ‘l’: low dist" valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="instruction_test">
+      <TextComponent name="test_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.03" valType="code"/>
+        <Param name="name" updates="None" val="test_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Hopefully you have a clear idea of what a high or low tone sounds like and how it might be different from a background tone. &amp;#10;&amp;#10;Based on your knowledge, please start the testing phase. Press any key to begin." valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="ready">
+        <Param name="allowedKeys" updates="constant" val="" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="ready" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="feedback">
+      <CodeComponent name="feedback_code">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="c = 0&amp;#10;w = 0&amp;#10;run = 0&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="c = 0;&amp;#10;w = 0;&amp;#10;run = 0;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="if ((! resp.keys)) {&amp;#10;    msg = &quot;Failed to respond&quot;;&amp;#10;} else {&amp;#10;    if (resp.corr) {&amp;#10;        msg = &quot;Correct!&quot;;&amp;#10;        c = (c + 1);&amp;#10;    } else {&amp;#10;        msg = &quot;Not quite!&quot;;&amp;#10;        w = (w + 1);&amp;#10;    }&amp;#10;}&amp;#10;run = (run + 1);&amp;#10;if (((run % 10) === 0)) {&amp;#10;    msg = ((((msg + &quot;       &quot;) + &quot;last 10 trials   &quot;) + ((c * 100) / (c + w)).toString()) + &quot; % correct&quot;);&amp;#10;    c = 0;&amp;#10;    w = 0;&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not resp.keys :&amp;#10;  msg=&quot;Failed to respond&quot;&amp;#10;elif resp.corr:#stored on last run routine&amp;#10;  msg=&quot;Correct!&quot; &amp;#10;  c = c+1&amp;#10;else:&amp;#10;  msg=&quot;Not quite!&quot;&amp;#10;  w = w+1&amp;#10;  &amp;#10;run = run+1 &amp;#10;if run %10 == 0:&amp;#10;   msg = msg + &quot;       &quot; + &quot;last 10 trials   &quot; + str(c*100/(c+w)) + &quot; % correct&quot;&amp;#10;   c = 0&amp;#10;   w = 0&amp;#10;   &amp;#10;" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="feedback_code" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="feedback_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.08" valType="code"/>
+        <Param name="name" updates="None" val="feedback_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="2" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="$msg" valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="thanks">
+      <TextComponent name="thanks_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="thanks_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="10" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Thank you for your time and for helping us out!" valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="test_feedback">
+      <CodeComponent name="text_feedback_code">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="&quot;&quot;&amp;#10;c = 0&amp;#10;w = 0&amp;#10;run = 0&amp;#10;msg = &quot;&quot;" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="/*  */&amp;#10;var c, msg, run, w;&amp;#10;c = 0;&amp;#10;w = 0;&amp;#10;run = 0;&amp;#10;msg = &quot;&quot;;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="if (test_resp.corr) {&amp;#10;    c = (c + 1);&amp;#10;    msg_test = &quot;Correct!&quot;;&amp;#10;} else {&amp;#10;    w = (w + 1);&amp;#10;    msg_test = &quot;Oops! That was wrong&quot;;&amp;#10;}&amp;#10;run = (run + 1);&amp;#10;if (((run % 10) === 0)) {&amp;#10;    msg = ((&quot;Last 10 trials   &quot; + ((c * 100) / (c + w)).toString()) + &quot; % correct&quot;);&amp;#10;    c = 0;&amp;#10;    w = 0;&amp;#10;} else {&amp;#10;    msg = &quot;&quot;;&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if test_resp.corr:#stored on last run routine&amp;#10;  c = c+1&amp;#10;  msg_test=&quot;Correct!&quot;&amp;#10;else:&amp;#10;  w = w+1  &amp;#10;  msg_test=&quot;Oops! That was wrong&quot;&amp;#10; &amp;#10;run = run+1 &amp;#10;if run %10 == 0:&amp;#10;   msg =  &quot;Last 10 trials   &quot; + str(c*100/(c+w)) + &quot; % correct&quot;&amp;#10;   c = 0&amp;#10;   w = 0&amp;#10;else:&amp;#10;    msg = &quot;&quot;" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="text_feedback_code" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="test_feedback_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="test_feedback_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1.0" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="$msg" valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="headphone_check_test">
+      <SoundComponent name="headphone_check_sound">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="hamming" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="headphone_check_sound" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="sound" updates="set every repeat" val="$&quot;assets/&quot; + Name" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.5" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+        <Param name="volume" updates="constant" val="1" valType="code"/>
+      </SoundComponent>
+      <TextComponent name="headphone_check_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.04" valType="code"/>
+        <Param name="name" updates="None" val="headphone_check_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.5" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="Please enter 1 / 2 / 3 based on which tone you think is the softest. " valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+      <KeyboardComponent name="headphone_check_resp">
+        <Param name="allowedKeys" updates="set every repeat" val="'1','2','3'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="$corrAns" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="headphone_check_resp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="last key" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="True" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+    </Routine>
+    <Routine name="volume_check_test">
+      <SoundComponent name="volume_check_sound">
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="hamming" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="volume_check_sound" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="sound" updates="set every repeat" val="$&quot;assets/&quot; + Name" valType="str"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="constant" val="False" valType="bool"/>
+        <Param name="volume" updates="set every repeat" val="1" valType="code"/>
+      </SoundComponent>
+      <KeyboardComponent name="volume_check_resp">
+        <Param name="allowedKeys" updates="constant" val="'d'" valType="code"/>
+        <Param name="correctAns" updates="constant" val="" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="discard previous" updates="constant" val="True" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="forceEndRoutine" updates="constant" val="True" valType="bool"/>
+        <Param name="name" updates="None" val="volume_check_resp" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="store" updates="constant" val="nothing" valType="str"/>
+        <Param name="storeCorrect" updates="constant" val="False" valType="bool"/>
+        <Param name="syncScreenRefresh" updates="constant" val="True" valType="bool"/>
+      </KeyboardComponent>
+      <TextComponent name="volume_check_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.04" valType="code"/>
+        <Param name="name" updates="None" val="volume_check_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Level calibration&amp;#10;&amp;#10;First, set your computer volume to about 25% of maximum.&amp;#10;&amp;#10;Then turn up the volume until the calibration noise is at a loud but comfortable level.&amp;#10;&amp;#10;Please press ‘d’ once you are satisfied with the volume." valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="headphone_check_feedback">
+      <CodeComponent name="code_3">
+        <Param name="Before Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Before JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Begin Experiment" updates="constant" val="headphone_count=0&amp;#10;expt=0" valType="extendedCode"/>
+        <Param name="Begin JS Experiment" updates="constant" val="headphone_count = 0;&amp;#10;expt = 0;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin JS Routine" updates="constant" val="if ((! headphone_check_resp.keys)) {&amp;#10;    headphone_check_msg = &quot;Failed to respond&quot;;&amp;#10;} else {&amp;#10;    if (headphone_check_resp.corr) {&amp;#10;        headphone_count += 1;&amp;#10;        headphone_check_msg = (&quot;Correct answers: &quot; + headphone_count.toString());&amp;#10;    }&amp;#10;}&amp;#10;expt += 1;&amp;#10;" valType="extendedCode"/>
+        <Param name="Begin Routine" updates="constant" val="if not headphone_check_resp.keys :&amp;#10;  headphone_check_msg=&quot;Failed to respond&quot;&amp;#10;elif headphone_check_resp.corr:#stored on last run routine&amp;#10;  headphone_count +=1 &amp;#10;  headphone_check_msg = &quot;Correct answers: &quot; + str(headphone_count)&amp;#10;expt += 1" valType="extendedCode"/>
+        <Param name="Code Type" updates="None" val="Auto-&gt;JS" valType="str"/>
+        <Param name="Each Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="Each JS Frame" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Experiment" updates="constant" val="" valType="extendedCode"/>
+        <Param name="End JS Routine" updates="constant" val="if (((expt === 6) &amp;&amp; (headphone_count &lt; 5))) {&amp;#10;    psychoJS.quit();&amp;#10;}&amp;#10;" valType="extendedCode"/>
+        <Param name="End Routine" updates="constant" val="if expt == 6 and headphone_count &lt; 5:&amp;#10;    psychoJS.quit()" valType="extendedCode"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="name" updates="None" val="code_3" valType="code"/>
+      </CodeComponent>
+      <TextComponent name="text_3">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.1" valType="code"/>
+        <Param name="name" updates="None" val="text_3" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="1" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="set every repeat" val="$headphone_check_msg" valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+    <Routine name="headphone_check_reminder">
+      <TextComponent name="headphone_check_reminder_text">
+        <Param name="color" updates="constant" val="white" valType="str"/>
+        <Param name="colorSpace" updates="constant" val="rgb" valType="str"/>
+        <Param name="disabled" updates="None" val="False" valType="bool"/>
+        <Param name="durationEstim" updates="None" val="" valType="code"/>
+        <Param name="flip" updates="constant" val="" valType="str"/>
+        <Param name="font" updates="constant" val="Arial" valType="str"/>
+        <Param name="languageStyle" updates="None" val="LTR" valType="str"/>
+        <Param name="letterHeight" updates="constant" val="0.05" valType="code"/>
+        <Param name="name" updates="None" val="headphone_check_reminder_text" valType="code"/>
+        <Param name="opacity" updates="constant" val="1" valType="code"/>
+        <Param name="ori" updates="constant" val="0" valType="code"/>
+        <Param name="pos" updates="constant" val="(0, 0)" valType="code"/>
+        <Param name="saveStartStop" updates="None" val="True" valType="bool"/>
+        <Param name="startEstim" updates="None" val="" valType="code"/>
+        <Param name="startType" updates="None" val="time (s)" valType="str"/>
+        <Param name="startVal" updates="None" val="0.0" valType="code"/>
+        <Param name="stopType" updates="None" val="duration (s)" valType="str"/>
+        <Param name="stopVal" updates="constant" val="4" valType="code"/>
+        <Param name="syncScreenRefresh" updates="None" val="True" valType="bool"/>
+        <Param name="text" updates="constant" val="Please kindly wear headphones for our task, not wearing headphones will end up disqualifying you. " valType="extendedStr"/>
+        <Param name="units" updates="None" val="from exp settings" valType="str"/>
+        <Param name="wrapWidth" updates="constant" val="" valType="code"/>
+      </TextComponent>
+    </Routine>
+  </Routines>
+  <Flow>
+    <Routine name="headphone_check_reminder"/>
+    <LoopInitiator loopType="TrialHandler" name="volume_check_trials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Name', 'noise_headphone_check'), ('type', 'volume_check')])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="Volume_check.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="volume_check_trials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="volume_check_test"/>
+    <LoopTerminator name="volume_check_trials"/>
+    <LoopInitiator loopType="TrialHandler" name="headphone_check_trials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Name', 'antiphase_HC_IOS.wav'), ('type', 'hp0'), ('corrAns', 3)]), OrderedDict([('Name', 'antiphase_HC_ISO.wav'), ('type', 'hp1'), ('corrAns', 2)]), OrderedDict([('Name', 'antiphase_HC_OIS.wav'), ('type', 'hp2'), ('corrAns', 3)]), OrderedDict([('Name', 'antiphase_HC_OSI.wav'), ('type', 'hp3'), ('corrAns', 2)]), OrderedDict([('Name', 'antiphase_HC_SIO.wav'), ('type', 'hp4'), ('corrAns', 1)]), OrderedDict([('Name', 'antiphase_HC_SOI.wav'), ('type', 'hp5'), ('corrAns', 1)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="headphone_check.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="random" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="headphone_check_trials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="headphone_check_test"/>
+    <Routine name="headphone_check_feedback"/>
+    <LoopTerminator name="headphone_check_trials"/>
+    <Routine name="intruction"/>
+    <LoopInitiator loopType="TrialHandler" name="trials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Name', 'train_wave_high_0.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_0.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 261]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_1.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_1.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 535]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_2.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 331]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_2.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_3.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_3.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 331]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_4.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_4.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 261]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_5.wav'), ('corrAns', 'h'), ('Tones', [535, 161, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_6.wav'), ('corrAns', 'h'), ('Tones', [127, 127, 127]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_7.wav'), ('corrAns', 'h'), ('Tones', [100, 864, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_5.wav'), ('corrAns', 'l'), ('Tones', [100, 205, 331]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_8.wav'), ('corrAns', 'h'), ('Tones', [1396, 1396, 864]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_6.wav'), ('corrAns', 'l'), ('Tones', [331, 1396, 161]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_9.wav'), ('corrAns', 'h'), ('Tones', [1098, 680, 100]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_10.wav'), ('corrAns', 'h'), ('Tones', [1098, 864, 1098]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_11.wav'), ('corrAns', 'h'), ('Tones', [680, 864, 535]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_12.wav'), ('corrAns', 'h'), ('Tones', [1396, 161, 1098]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_7.wav'), ('corrAns', 'l'), ('Tones', [127, 864, 127]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_13.wav'), ('corrAns', 'h'), ('Tones', [864, 535, 535]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_8.wav'), ('corrAns', 'l'), ('Tones', [161, 100, 161]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_14.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 127]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_9.wav'), ('corrAns', 'l'), ('Tones', [161, 161, 127]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_10.wav'), ('corrAns', 'l'), ('Tones', [1098, 1098, 1098]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_15.wav'), ('corrAns', 'h'), ('Tones', [864, 680, 1098]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_11.wav'), ('corrAns', 'l'), ('Tones', [1396, 261, 205]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_12.wav'), ('corrAns', 'l'), ('Tones', [1396, 161, 331]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_13.wav'), ('corrAns', 'l'), ('Tones', [127, 161, 261]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_14.wav'), ('corrAns', 'l'), ('Tones', [127, 161, 127]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_15.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 161]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_16.wav'), ('corrAns', 'h'), ('Tones', [864, 535, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_17.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 161]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_16.wav'), ('corrAns', 'l'), ('Tones', [331, 205, 100]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_18.wav'), ('corrAns', 'h'), ('Tones', [127, 535, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_19.wav'), ('corrAns', 'h'), ('Tones', [535, 864, 1396]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_17.wav'), ('corrAns', 'l'), ('Tones', [205, 205, 1396]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_18.wav'), ('corrAns', 'l'), ('Tones', [331, 100, 261]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_19.wav'), ('corrAns', 'l'), ('Tones', [100, 127, 127]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_20.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 864]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_20.wav'), ('corrAns', 'l'), ('Tones', [100, 100, 161]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_21.wav'), ('corrAns', 'l'), ('Tones', [331, 100, 205]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_21.wav'), ('corrAns', 'h'), ('Tones', [864, 535, 1098]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_22.wav'), ('corrAns', 'h'), ('Tones', [1098, 1098, 1396]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_22.wav'), ('corrAns', 'l'), ('Tones', [261, 205, 261]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_23.wav'), ('corrAns', 'h'), ('Tones', [864, 1098, 535]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_23.wav'), ('corrAns', 'l'), ('Tones', [161, 1396, 205]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_24.wav'), ('corrAns', 'l'), ('Tones', [864, 205, 261]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_24.wav'), ('corrAns', 'h'), ('Tones', [535, 100, 1396]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_25.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_26.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_high_27.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 680]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_25.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 331]), ('Tonekind', None)]), OrderedDict([('Name', 'train_wave_low_26.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 331]), ('Tonekind', None)])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="train_three_tones_v2_file.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="trials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="trial_train"/>
+    <Routine name="feedback"/>
+    <LoopTerminator name="trials"/>
+    <Routine name="instruction_test"/>
+    <LoopInitiator loopType="TrialHandler" name="test_trials">
+      <Param name="Selected rows" updates="None" val="" valType="str"/>
+      <Param name="conditions" updates="None" val="[OrderedDict([('Name', 'test_wave_high_0.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_1.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_0.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_2.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_1.wav'), ('corrAns', 'l'), ('Tones', [535, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_2.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_3.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_3.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_4.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_5.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_4.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_5.wav'), ('corrAns', 'l'), ('Tones', [331, 421, 205]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_6.wav'), ('corrAns', 'l'), ('Tones', [1396, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_7.wav'), ('corrAns', 'l'), ('Tones', [127, 261, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_6.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 1098]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_7.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_8.wav'), ('corrAns', 'l'), ('Tones', [680, 331, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_9.wav'), ('corrAns', 'l'), ('Tones', [100, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_high_8.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 1396]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_10.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_11.wav'), ('corrAns', 'l'), ('Tones', [1396, 1098, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_9.wav'), ('corrAns', 'h'), ('Tones', [100, 680, 1098]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_12.wav'), ('corrAns', 'l'), ('Tones', [421, 261, 205]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_10.wav'), ('corrAns', 'h'), ('Tones', [864, 680, 127]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_low_13.wav'), ('corrAns', 'l'), ('Tones', [261, 421, 535]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_high_11.wav'), ('corrAns', 'h'), ('Tones', [680, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_12.wav'), ('corrAns', 'h'), ('Tones', [161, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_14.wav'), ('corrAns', 'l'), ('Tones', [127, 127, 1098]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_13.wav'), ('corrAns', 'h'), ('Tones', [1098, 127, 1774]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_15.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_14.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 421]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_16.wav'), ('corrAns', 'l'), ('Tones', [421, 331, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_15.wav'), ('corrAns', 'h'), ('Tones', [421, 680, 1774]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_16.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 421]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_17.wav'), ('corrAns', 'h'), ('Tones', [421, 100, 421]), ('Tonekind', [0, 0, 2])]), OrderedDict([('Name', 'test_wave_low_17.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 127]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_low_18.wav'), ('corrAns', 'l'), ('Tones', [421, 205, 1098]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_high_18.wav'), ('corrAns', 'h'), ('Tones', [680, 161, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_19.wav'), ('corrAns', 'h'), ('Tones', [127, 100, 127]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_19.wav'), ('corrAns', 'l'), ('Tones', [127, 421, 421]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_low_20.wav'), ('corrAns', 'l'), ('Tones', [535, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_high_20.wav'), ('corrAns', 'h'), ('Tones', [421, 864, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_21.wav'), ('corrAns', 'h'), ('Tones', [864, 1396, 127]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_high_22.wav'), ('corrAns', 'h'), ('Tones', [864, 864, 864]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_21.wav'), ('corrAns', 'l'), ('Tones', [1774, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_23.wav'), ('corrAns', 'h'), ('Tones', [1774, 864, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_high_24.wav'), ('corrAns', 'h'), ('Tones', [127, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_22.wav'), ('corrAns', 'l'), ('Tones', [161, 161, 161]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_25.wav'), ('corrAns', 'h'), ('Tones', [1098, 1396, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_23.wav'), ('corrAns', 'l'), ('Tones', [1396, 100, 535]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_24.wav'), ('corrAns', 'l'), ('Tones', [1396, 331, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_26.wav'), ('corrAns', 'h'), ('Tones', [1774, 421, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_high_27.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 1396]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_25.wav'), ('corrAns', 'l'), ('Tones', [100, 127, 161]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_26.wav'), ('corrAns', 'l'), ('Tones', [1774, 205, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_28.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 535]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_27.wav'), ('corrAns', 'l'), ('Tones', [1396, 1774, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_28.wav'), ('corrAns', 'l'), ('Tones', [205, 205, 205]), ('Tonekind', [1, 0, 1])]), OrderedDict([('Name', 'test_wave_high_29.wav'), ('corrAns', 'h'), ('Tones', [535, 205, 864]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_high_30.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 205]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_31.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_32.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_29.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_33.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_30.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_31.wav'), ('corrAns', 'l'), ('Tones', [127, 261, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_34.wav'), ('corrAns', 'h'), ('Tones', [680, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_35.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_32.wav'), ('corrAns', 'l'), ('Tones', [421, 261, 205]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_33.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_34.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_36.wav'), ('corrAns', 'h'), ('Tones', [864, 680, 127]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_37.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_38.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_39.wav'), ('corrAns', 'h'), ('Tones', [421, 100, 421]), ('Tonekind', [0, 0, 2])]), OrderedDict([('Name', 'test_wave_high_40.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 1098]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_35.wav'), ('corrAns', 'l'), ('Tones', [331, 421, 205]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_36.wav'), ('corrAns', 'l'), ('Tones', [1396, 1774, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_37.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_41.wav'), ('corrAns', 'h'), ('Tones', [535, 205, 864]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_38.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_42.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 421]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_43.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_44.wav'), ('corrAns', 'h'), ('Tones', [1774, 421, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_39.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_40.wav'), ('corrAns', 'l'), ('Tones', [100, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_low_41.wav'), ('corrAns', 'l'), ('Tones', [1774, 205, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_45.wav'), ('corrAns', 'h'), ('Tones', [1098, 127, 1774]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_42.wav'), ('corrAns', 'l'), ('Tones', [127, 421, 421]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_low_43.wav'), ('corrAns', 'l'), ('Tones', [1396, 331, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_44.wav'), ('corrAns', 'l'), ('Tones', [261, 421, 535]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_low_45.wav'), ('corrAns', 'l'), ('Tones', [421, 331, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_46.wav'), ('corrAns', 'l'), ('Tones', [535, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_47.wav'), ('corrAns', 'l'), ('Tones', [127, 127, 1098]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_46.wav'), ('corrAns', 'h'), ('Tones', [100, 680, 1098]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_high_47.wav'), ('corrAns', 'h'), ('Tones', [1098, 1396, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_48.wav'), ('corrAns', 'h'), ('Tones', [864, 864, 864]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_49.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_48.wav'), ('corrAns', 'l'), ('Tones', [100, 127, 161]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_50.wav'), ('corrAns', 'h'), ('Tones', [680, 161, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_51.wav'), ('corrAns', 'h'), ('Tones', [161, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_52.wav'), ('corrAns', 'h'), ('Tones', [864, 1396, 127]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_high_53.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_54.wav'), ('corrAns', 'h'), ('Tones', [421, 680, 1774]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_55.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_49.wav'), ('corrAns', 'l'), ('Tones', [1396, 100, 535]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_56.wav'), ('corrAns', 'h'), ('Tones', [127, 100, 127]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_57.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 421]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_58.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 205]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_59.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_60.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_50.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_51.wav'), ('corrAns', 'l'), ('Tones', [421, 205, 1098]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_low_52.wav'), ('corrAns', 'l'), ('Tones', [1774, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_53.wav'), ('corrAns', 'l'), ('Tones', [1396, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_54.wav'), ('corrAns', 'l'), ('Tones', [1396, 1098, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_61.wav'), ('corrAns', 'h'), ('Tones', [127, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_62.wav'), ('corrAns', 'h'), ('Tones', [421, 864, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_55.wav'), ('corrAns', 'l'), ('Tones', [680, 331, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_56.wav'), ('corrAns', 'l'), ('Tones', [161, 161, 161]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_63.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 1396]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_64.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_57.wav'), ('corrAns', 'l'), ('Tones', [535, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_high_65.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 1396]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_58.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_66.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 535]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_59.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_60.wav'), ('corrAns', 'l'), ('Tones', [205, 205, 205]), ('Tonekind', [1, 0, 1])]), OrderedDict([('Name', 'test_wave_high_67.wav'), ('corrAns', 'h'), ('Tones', [1774, 864, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_61.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 127]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_high_68.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_62.wav'), ('corrAns', 'l'), ('Tones', [1396, 1774, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_63.wav'), ('corrAns', 'l'), ('Tones', [100, 127, 161]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_64.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_69.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 1396]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_70.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_71.wav'), ('corrAns', 'h'), ('Tones', [1098, 1396, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_72.wav'), ('corrAns', 'h'), ('Tones', [864, 680, 127]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_73.wav'), ('corrAns', 'h'), ('Tones', [127, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_65.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_66.wav'), ('corrAns', 'l'), ('Tones', [1774, 205, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_74.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 535]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_75.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 1098]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_76.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 421]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_67.wav'), ('corrAns', 'l'), ('Tones', [421, 261, 205]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_68.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_69.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 127]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_low_70.wav'), ('corrAns', 'l'), ('Tones', [161, 161, 161]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_71.wav'), ('corrAns', 'l'), ('Tones', [261, 421, 535]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_high_77.wav'), ('corrAns', 'h'), ('Tones', [680, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_72.wav'), ('corrAns', 'l'), ('Tones', [127, 261, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_78.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_73.wav'), ('corrAns', 'l'), ('Tones', [1396, 1098, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_74.wav'), ('corrAns', 'l'), ('Tones', [535, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_79.wav'), ('corrAns', 'h'), ('Tones', [864, 1396, 127]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_75.wav'), ('corrAns', 'l'), ('Tones', [127, 127, 1098]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_76.wav'), ('corrAns', 'l'), ('Tones', [205, 205, 205]), ('Tonekind', [1, 0, 1])]), OrderedDict([('Name', 'test_wave_high_80.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_77.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_81.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 1396]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_82.wav'), ('corrAns', 'h'), ('Tones', [864, 864, 864]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_83.wav'), ('corrAns', 'h'), ('Tones', [421, 680, 1774]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_84.wav'), ('corrAns', 'h'), ('Tones', [127, 100, 127]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_85.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_78.wav'), ('corrAns', 'l'), ('Tones', [100, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_high_86.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 205]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_87.wav'), ('corrAns', 'h'), ('Tones', [100, 680, 1098]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_79.wav'), ('corrAns', 'l'), ('Tones', [127, 421, 421]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_low_80.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_81.wav'), ('corrAns', 'l'), ('Tones', [680, 331, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_82.wav'), ('corrAns', 'l'), ('Tones', [1396, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_88.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_89.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_83.wav'), ('corrAns', 'l'), ('Tones', [1774, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_90.wav'), ('corrAns', 'h'), ('Tones', [680, 161, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_91.wav'), ('corrAns', 'h'), ('Tones', [421, 864, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_84.wav'), ('corrAns', 'l'), ('Tones', [331, 421, 205]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_85.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_92.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_93.wav'), ('corrAns', 'h'), ('Tones', [1098, 127, 1774]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_86.wav'), ('corrAns', 'l'), ('Tones', [535, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_low_87.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_94.wav'), ('corrAns', 'h'), ('Tones', [535, 205, 864]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_high_95.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_96.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 421]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_88.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_97.wav'), ('corrAns', 'h'), ('Tones', [161, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_98.wav'), ('corrAns', 'h'), ('Tones', [421, 100, 421]), ('Tonekind', [0, 0, 2])]), OrderedDict([('Name', 'test_wave_high_99.wav'), ('corrAns', 'h'), ('Tones', [1774, 864, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_89.wav'), ('corrAns', 'l'), ('Tones', [1396, 100, 535]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_90.wav'), ('corrAns', 'l'), ('Tones', [421, 331, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_91.wav'), ('corrAns', 'l'), ('Tones', [421, 205, 1098]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_high_100.wav'), ('corrAns', 'h'), ('Tones', [1774, 421, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_92.wav'), ('corrAns', 'l'), ('Tones', [1396, 331, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_101.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_102.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_103.wav'), ('corrAns', 'h'), ('Tones', [864, 680, 127]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_low_93.wav'), ('corrAns', 'l'), ('Tones', [421, 331, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_94.wav'), ('corrAns', 'l'), ('Tones', [535, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_95.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_104.wav'), ('corrAns', 'h'), ('Tones', [421, 100, 421]), ('Tonekind', [0, 0, 2])]), OrderedDict([('Name', 'test_wave_high_105.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 421]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_96.wav'), ('corrAns', 'l'), ('Tones', [421, 205, 1098]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_low_97.wav'), ('corrAns', 'l'), ('Tones', [100, 127, 161]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_98.wav'), ('corrAns', 'l'), ('Tones', [1774, 205, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_106.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_107.wav'), ('corrAns', 'h'), ('Tones', [680, 161, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_99.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_low_100.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 127]), ('Tonekind', [1, 1, 0])]), OrderedDict([('Name', 'test_wave_high_108.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 1098]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_109.wav'), ('corrAns', 'h'), ('Tones', [100, 680, 1098]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_high_110.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_111.wav'), ('corrAns', 'h'), ('Tones', [421, 680, 1774]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_112.wav'), ('corrAns', 'h'), ('Tones', [127, 100, 127]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_113.wav'), ('corrAns', 'h'), ('Tones', [1774, 421, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_101.wav'), ('corrAns', 'l'), ('Tones', [261, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_114.wav'), ('corrAns', 'h'), ('Tones', [864, 864, 864]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_102.wav'), ('corrAns', 'l'), ('Tones', [1396, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_115.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 1396]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_103.wav'), ('corrAns', 'l'), ('Tones', [127, 421, 421]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_low_104.wav'), ('corrAns', 'l'), ('Tones', [421, 261, 205]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_116.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_117.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 1396]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_118.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_119.wav'), ('corrAns', 'h'), ('Tones', [127, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_105.wav'), ('corrAns', 'l'), ('Tones', [1396, 331, 331]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_120.wav'), ('corrAns', 'h'), ('Tones', [1098, 127, 1774]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_106.wav'), ('corrAns', 'l'), ('Tones', [100, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_high_121.wav'), ('corrAns', 'h'), ('Tones', [680, 535, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_107.wav'), ('corrAns', 'l'), ('Tones', [261, 421, 535]), ('Tonekind', [0, 1, 0])]), OrderedDict([('Name', 'test_wave_high_122.wav'), ('corrAns', 'h'), ('Tones', [1098, 1396, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_high_123.wav'), ('corrAns', 'h'), ('Tones', [864, 1396, 127]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_low_108.wav'), ('corrAns', 'l'), ('Tones', [331, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_109.wav'), ('corrAns', 'l'), ('Tones', [331, 331, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_124.wav'), ('corrAns', 'h'), ('Tones', [680, 127, 680]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_110.wav'), ('corrAns', 'l'), ('Tones', [331, 421, 205]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_111.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_112.wav'), ('corrAns', 'l'), ('Tones', [535, 1396, 261]), ('Tonekind', [0, 0, 1])]), OrderedDict([('Name', 'test_wave_low_113.wav'), ('corrAns', 'l'), ('Tones', [161, 421, 261]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_114.wav'), ('corrAns', 'l'), ('Tones', [161, 161, 161]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_low_115.wav'), ('corrAns', 'l'), ('Tones', [205, 205, 205]), ('Tonekind', [1, 0, 1])]), OrderedDict([('Name', 'test_wave_high_125.wav'), ('corrAns', 'h'), ('Tones', [535, 127, 535]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_116.wav'), ('corrAns', 'l'), ('Tones', [1774, 1396, 1774]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_117.wav'), ('corrAns', 'l'), ('Tones', [1396, 100, 535]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_126.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 205]), ('Tonekind', [2, 2, 0])]), OrderedDict([('Name', 'test_wave_high_127.wav'), ('corrAns', 'h'), ('Tones', [535, 205, 864]), ('Tonekind', [2, 0, 0])]), OrderedDict([('Name', 'test_wave_high_128.wav'), ('corrAns', 'h'), ('Tones', [1098, 1774, 421]), ('Tonekind', [2, 0, 2])]), OrderedDict([('Name', 'test_wave_low_118.wav'), ('corrAns', 'l'), ('Tones', [680, 331, 161]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_129.wav'), ('corrAns', 'h'), ('Tones', [421, 864, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_130.wav'), ('corrAns', 'h'), ('Tones', [161, 127, 100]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_131.wav'), ('corrAns', 'h'), ('Tones', [535, 535, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_119.wav'), ('corrAns', 'l'), ('Tones', [1396, 1098, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_120.wav'), ('corrAns', 'l'), ('Tones', [127, 127, 1098]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_high_132.wav'), ('corrAns', 'h'), ('Tones', [680, 680, 535]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_high_133.wav'), ('corrAns', 'h'), ('Tones', [535, 680, 680]), ('Tonekind', [2, 2, 2])]), OrderedDict([('Name', 'test_wave_low_121.wav'), ('corrAns', 'l'), ('Tones', [127, 261, 261]), ('Tonekind', [0, 1, 1])]), OrderedDict([('Name', 'test_wave_high_134.wav'), ('corrAns', 'h'), ('Tones', [1774, 864, 421]), ('Tonekind', [0, 2, 2])]), OrderedDict([('Name', 'test_wave_low_122.wav'), ('corrAns', 'l'), ('Tones', [1396, 1774, 1396]), ('Tonekind', [0, 0, 0])]), OrderedDict([('Name', 'test_wave_low_123.wav'), ('corrAns', 'l'), ('Tones', [261, 261, 331]), ('Tonekind', [1, 1, 1])]), OrderedDict([('Name', 'test_wave_high_135.wav'), ('corrAns', 'h'), ('Tones', [680, 331, 680]), ('Tonekind', [2, 2, 2])])]" valType="str"/>
+      <Param name="conditionsFile" updates="None" val="test_three_tones_v2_file.csv" valType="str"/>
+      <Param name="endPoints" updates="None" val="[0, 1]" valType="num"/>
+      <Param name="isTrials" updates="None" val="True" valType="bool"/>
+      <Param name="loopType" updates="None" val="sequential" valType="str"/>
+      <Param name="nReps" updates="None" val="1" valType="code"/>
+      <Param name="name" updates="None" val="test_trials" valType="code"/>
+      <Param name="random seed" updates="None" val="" valType="code"/>
+    </LoopInitiator>
+    <Routine name="trial_test"/>
+    <Routine name="test_feedback"/>
+    <LoopTerminator name="test_trials"/>
+    <Routine name="thanks"/>
+  </Flow>
+</PsychoPy2experiment>
