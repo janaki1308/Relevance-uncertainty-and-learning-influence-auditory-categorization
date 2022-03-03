@@ -1,22 +1,49 @@
-# Ignore followoing folders
+# Ignore following folders
 
-auditory_categorization_online_data
-auditory_categorization
-human_auditory_categorization
-figures
-'irb and online consent'
-papers
-'PsychoPy3 Demos'
+*_online_data/
+auditory_categorization/
+auditoryCategorizationTaskCreation/
+bads-master/
+dataForMatlabBADSOptimizer/
+demographicsData/
+figures/
+filesSentToJared/
+idealSubjectNotebooks/
+InforForGrant/
+jaredHumanAuditoryCategorization/
+oldNotebooksAndPyFiles-FolderCreated20211007/
+papers/
+prolificPayment/
+PsychoPy3_Demos/
+psychopyIssues/
+RelevanceProject_FromJared/
+simulatedData/
 __pycache__
-dummy_task/assets
-dummy_task/data
-dummy_task/html
-dummy_task/soundfiles*
-
+.ipynb_checkpoints
 
 # Ignore all text,csv and xlsx files
 
-.docx
-.csv
-.xlsx
-.pdf
+*.docx
+*.csv
+*.xlsx
+*.pdf
+*.mat
+*.odt
+*.zip
+.DS_Store
+
+# Ignore all copies, keep original ipynbs
+
+Analyzing_online_data_script_LongContext_FrequencyBasedModel-20211008-Copy1.ipynb
+Analyzing_online_data_script_LongContext-Copy1.ipynb
+Analyzing_online_data_script_NoContext-Copy1.ipynb
+Analyzing_online_data_script_NoContextTrainingAndTestingDiff_simpleTrials-Copy1.ipynb
+Analyzing_online_data_script_NoContextTrainingAndTestingDiff_simpleTrials-VotingModel-Copy1.ipynb
+Analyzing_online_data_script_NoContextTrainingAndTestingDiff_simpleTrials-VotingModel-Copy2.ipynb
+Analyzing_online_data_script_ShortContext.ipynb
+Uncertainty_plots_short_term_context.ipynb
+Checking_for_correct_behaviour_of_new_soundfiles.ipynb
+Learning about @property.ipynb
+matrix_simplification.ipynb
+progress_bar_example.ipynb
+
