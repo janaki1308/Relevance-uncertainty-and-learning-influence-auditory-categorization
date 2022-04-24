@@ -6,6 +6,7 @@ auditoryCategorizationTaskCreation/
 bads-master/
 dataForMatlabBADSOptimizer/
 demographicsData/
+duplicateFilesForDebugging/
 figures/
 filesSentToJared/
 idealSubjectNotebooks/
@@ -30,6 +31,7 @@ __pycache__
 *.mat
 *.odt
 *.zip
+*.xls
 .DS_Store
 
 # Ignore all copies, keep original ipynbs
