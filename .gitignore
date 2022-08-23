@@ -9,6 +9,7 @@ demographicsData/
 duplicateFilesForDebugging/
 figures/
 filesSentToJared/
+functions_Matlab_cajalCourse
 idealSubjectNotebooks/
 InforForGrant/
 jaredHumanAuditoryCategorization/
@@ -27,6 +28,7 @@ __pycache__
 *.docx
 *.csv
 *.xlsx
+*.xls
 *.pdf
 *.mat
 *.odt
