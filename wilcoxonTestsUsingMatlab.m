@@ -2,7 +2,7 @@ clear variables;
 
 %% Figures 2,4
 
-load('/home/janaki/Dropbox/GeffenLab/Janaki/uncertaintyCode/figures/FromProlific/illustrations/PerformanceAccuracyChangesWithFrequencyOfDistractor.mat')
+load('/Users/janaki/Dropbox/GeffenLab/Janaki/uncertaintyCode/figures/FromProlific/illustrations/PerformanceAccuracyChangesWithFrequencyOfDistractor.mat')
 
 p_Freq = zeros(15);
 h_Freq = zeros(15);
@@ -14,13 +14,13 @@ end
 
 noContextDataVer = readtable('clusterResultsForSubsampledData.xls','Sheet','NoContextModelFits_veridicalPar');
 
-bic_subsampledData_probabilisticModelVer = table2array(noContextDataVer(:,13));
+bic_subsampledData_probabilisticModelVer = table2array(noContextDataVer(:,16));
 bic_subsampledData_probabilisticModelVer = bic_subsampledData_probabilisticModelVer(~isnan(bic_subsampledData_probabilisticModelVer));
 
-bic_subsampledData_randomModel = table2array(noContextDataVer(:,25));
+bic_subsampledData_randomModel = table2array(noContextDataVer(:,28));
 bic_subsampledData_randomModel = bic_subsampledData_randomModel(~isnan(bic_subsampledData_randomModel));
 
-bic_subsampledData_signalModelVer = table2array(noContextDataVer(:,22));
+bic_subsampledData_signalModelVer = table2array(noContextDataVer(:,25));
 bic_subsampledData_signalModelVer = bic_subsampledData_signalModelVer(~isnan(bic_subsampledData_signalModelVer));
 
 [p_NoContext_RandomVsProbabilisticVer,h_NoContext_RandomVsProbabilisticVer,stats_NoContext_RandomVsProbabilisticVer] = signrank(2*bic_subsampledData_probabilisticModelVer+3*log(600), 2*bic_subsampledData_randomModel+2*log(600));
@@ -70,7 +70,24 @@ OneIrrelevantToneAccuracy([30,35]) = [];
 TwoIrrelevantTonesAccuracy([30,35]) = [];
 [p_OneToneVsTwoTonesAccuracy, h_OneToneVsTwoTonesAccuracy, stats_OneToneVsTwoTonesAccuracy] = signrank(OneIrrelevantToneAccuracy, TwoIrrelevantTonesAccuracy);
 
-%% extended data Fig. 5
+%% Fig. 5
+
+load('/Users/janaki/Dropbox/GeffenLab/Janaki/uncertaintyCode/figures/FromProlific/illustrations/shortTermLearning_behaviour.mat')
+
+deltaLC = mean(behaviourAfterHighTrialLC(:,14:17),2) - mean(behaviourAfterLowTrialLC(:,14:17),2);
+deltaHC = mean(behaviourAfterHighTrialHC(:,14:17),2) - mean(behaviourAfterLowTrialHC(:,14:17),2);
+deltaNC = mean(behaviourAfterHighTrialNC(:,14:17),2) - mean(behaviourAfterLowTrialNC(:,14:17),2);
+
+[p_deltaLC, h_deltaLC, stats_deltaLC] = signrank(deltaLC);
+[p_deltaHC, h_deltaHC, stats_deltaHC] = signrank(deltaHC);
+[p_deltaNC, h_deltaNC, stats_deltaNC] = signrank(deltaNC);
+
+load('/Users/janaki/Dropbox/GeffenLab/Janaki/uncertaintyCode/figures/FromProlific/illustrations/longTermLearning_behaviour.mat')
+deltaLongTerm = mean(mean(behaviourSubsampledHC(:,14:17),2)) - mean(mean(behaviourSubsampledLC(:,14:17),2));
+
+[p_longTerm, h_longTerm, stats_longTerm] = ranksum(mean(behaviourSubsampledHC(:,14:17),2), mean(behaviourSubsampledLC(:,14:17),2));
+
+%% extended data Fig. 6
 lowContextData = readtable('clusterResultsForSubsampledData.xls','Sheet','BiasedLowModelFits_veridicalPar');
 
 bic_lowContext_probabilisticModel = table2array(lowContextData(:,14));

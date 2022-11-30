@@ -20,6 +20,7 @@ PsychoPy3_Demos/
 psychopyIssues/
 RelevanceProject_FromJared/
 simulatedData/
+subjectDataForPlots/
 __pycache__
 .ipynb_checkpoints
 
@@ -33,7 +34,7 @@ __pycache__
 *.mat
 *.odt
 *.zip
-!subjectDataForPlots/subjectData.zip
+*.save
 .DS_Store
 
 # Ignore all copies, keep original ipynbs
@@ -50,4 +51,4 @@ Checking_for_correct_behaviour_of_new_soundfiles.ipynb
 Learning about @property.ipynb
 matrix_simplification.ipynb
 progress_bar_example.ipynb
-
+Two-Way_Anova*.ipynb

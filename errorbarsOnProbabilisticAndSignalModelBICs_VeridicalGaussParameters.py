@@ -7,6 +7,7 @@ import matplotlib.pyplot as plt
 import scipy
 from scipy.optimize import minimize
 import math
+import pingouin as pg
 
 def strip_new_line_char(string):
     ""
@@ -39,7 +40,7 @@ def bestFitParametersProbabilistic(folder,subject,sensoryStd):
                 line2WithNewLineChar = strip_new_line_char(filelines[iline+1])
                 lineElementsOfSecondLine = line2WithNewLineChar.split(",")
                 lineElements = lineElementsOfFirstLine[:-1] + lineElementsOfSecondLine
-                temp = np.zeros((1,4))
+                temp = np.zeros((1,7))
                 temp[:,3] = float(lineElements[3][:-1])
                 temp[:,2] = float(lineElements[2][:-2])
                 temp[:,1] = float(lineElements[1][:])
@@ -115,7 +116,7 @@ if __name__ == '__main__':
             print("Median pback",np.around(np.quantile(subjectArray[:,1],q=0.5),decimals=2))
             print("5th quantile pback",np.around(np.quantile(subjectArray[:,1],q=0.05),decimals=2))
             print("95th quantile pback",np.around(np.quantile(subjectArray[:,1],q=0.95),decimals=2))
-        if modelType == 'signal':
+        if modelType == 'signal': 
             print("Median plow",np.around(np.quantile(subjectArray[:,1],q=0.5),decimals=2))
     else:
         if modelType == 'probabilistic':
@@ -128,5 +129,5 @@ if __name__ == '__main__':
     print("Median LL",np.around(np.quantile(subjectArray[:,-1],q=0.5),decimals=2))
     print("5th quantile LL",np.around(np.quantile(subjectArray[:,-1],q=0.05),decimals=2))
     print("95th quantile LL",np.around(np.quantile(subjectArray[:,-1],q=0.95),decimals=2))
-    
+    #return(subjectArray)
     

@@ -15,7 +15,7 @@ def strip_new_line_char(string):
     return string
            
 def findParametersCorrespondingToMinLikelihood(folder,subject,constraint):
-    guess_WConstant = np.arange(0.46,0.8,0.03)
+    guess_WConstant = np.arange(0.25,0.53,0.03)
     guess_W1 = np.arange(0,1.1,0.1)
     guess_tau = 10**(np.arange(-1,0.7,0.15))
     params_array = np.zeros(shape=(4,1),dtype=float)
@@ -37,6 +37,7 @@ def findParametersCorrespondingToMinLikelihood(folder,subject,constraint):
             filelines = f.readlines()
             nll_values = np.array([float(x) for x in filelines])
         params_constrained = (params_array[3,:] < float(constraint) + 0.01)*(params_array[3,:] > float(constraint) - 0.01)
+        #pdb.set_trace()
         indNLLConstrained = arrayInds[params_constrained]
         idxOfMinNll = np.argmin(nll_values)#[indNLLConstrained])
         bestParameters[int(iterations/30),:] = params_array[:,idxOfMinNll]#indNLLConstrained[idxOfMinNll]]
