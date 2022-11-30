@@ -34,6 +34,7 @@ __pycache__
 *.mat
 *.odt
 *.zip
+!subjectDataForPlots.zip
 *.save
 .DS_Store
 
